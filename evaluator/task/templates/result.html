@@ -7,40 +7,42 @@
  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
 <body>
+{% for info in Information %}
 <table>
    <thead>
      <tr>
-       <th>KPI - YTD</th>
-       <th>Jan</th>
-       <th>Feb</th>
-       <th>Mar</th>
-       <th>Apr</th>
-       <th>May</th>
-       <th>Jun</th>
-       <th>Jul</th>
-       <th>Aug</th>
-       <th>Sep</th>
-       <th>Oct</th>
-       <th>Nov</th>
-       <th>Dec</th>
+       <th>{{ info.name }} - {{ info.year }}</th>
+<!--       <th>Jan</th>-->
+<!--       <th>Feb</th>-->
+<!--       <th>Mar</th>-->
+<!--       <th>Apr</th>-->
+<!--       <th>May</th>-->
+<!--       <th>Jun</th>-->
+<!--       <th>Jul</th>-->
+<!--       <th>Aug</th>-->
+<!--       <th>Sep</th>-->
+<!--       <th>Oct</th>-->
+<!--       <th>Nov</th>-->
+<!--       <th>Dec</th>-->
+           <th>{{ info.month }}</th>
      </tr>
    </thead>
    
    <tbody>
      <tr>
        <th scope="row">Goal Zero, No leaks</th>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
-       <td><div class="circle"></div></td>
+       <td><div class="circle {{ color }}"></div></td>
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
+<!--       <td><div class="circle"></div></td>-->
      </tr>
      <tr>
        <th scope="row">Production</th>
@@ -74,5 +76,6 @@
      </tr>
    </tbody>
  </table>
+{% endfor %}
 </body>
 </html>
