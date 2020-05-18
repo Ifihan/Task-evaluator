@@ -13,8 +13,9 @@
      <legend>Input your information</legend>
      {% csrf_token %}
      {{ form.as_p }}
-<!--     <label>Name of company <br> <input type="text"></label>-->
-<!--   <label>Month <br> <select>-->
+<!--     <label>Name of company <br> <input id="name" name="name"></label>-->
+<!--     <label>Year <br> <input type="number" id="year" name="year"> </label>-->
+<!--   <label>Month <br> <select name="month" id="month">-->
 <!--    <option value="">Month</option>-->
 <!--    <option value="01">Jan</option>-->
 <!--    <option value="02">Feb</option>-->
@@ -29,7 +30,7 @@
 <!--    <option value="11">Nov</option>-->
 <!--    <option value="12">Dec</option>-->
 <!--   </select> </label>-->
-<!--   <label>Score <br> <input type="number"> </label>-->
+<!--   <label>Score <br> <input type="number" id="score" name="score"> </label>-->
    <button type="submit">SUBMIT</button>
  </form>
  </div>

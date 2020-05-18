@@ -1,7 +1,8 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 
-month = [
+MONTH = [
     ('Jan', 'January'),
     ('Feb', 'February'),
     ('Mar', 'March'),
@@ -17,6 +18,17 @@ month = [
 ]
 
 
+# COLOR = [
+#     ('red', range(0, 49)),
+#     ('green', range(70, 100)),
+# ]
+
+COLOR = [
+    ('red', 'RED'),
+    ('green', 'GREEN'),
+]
+
+
 class Companie(models.Model):
     name = models.CharField(max_length=1000)
 
@@ -27,8 +39,16 @@ class Companie(models.Model):
 class Information(models.Model):
     name = models.ForeignKey(Companie, on_delete=models.CASCADE)
     year = models.IntegerField(default=2019)
-    month = models.TextField(max_length=3, choices=month)
-    score = models.IntegerField()
+    month = models.TextField(max_length=3, choices=MONTH)
+    score = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(100)])
+
+    # @staticmethod
+    # def color(self):
+    #     if self.filter(score__gt='69'):
+    #         return "circle green"
+    #
+    #     if self.filter(score__lt='70'):
+    #         return "circle red"
 
     def __str__(self):
-        return self.month
+        return ' %s - %s ' % (self.year, self.month)

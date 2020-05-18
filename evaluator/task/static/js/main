@@ -1,0 +1,13 @@
+//var x = document.getElementById('id_score').value;
+//var y = document.getElementById('id_color');
+
+var a = document.getElementById("score").value;
+var b = document.getElementById("color");
+
+if (0 < a < 70){
+    b.style.color = 'red';
+}
+
+if (69 < a < 100){
+    b.style.color = 'green';
+}
